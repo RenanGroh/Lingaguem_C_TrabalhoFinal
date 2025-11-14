@@ -30,4 +30,8 @@ int remove_student_by_id(StudentArray *arr, int id); // 1 se removido
 void print_student(const Student *s);
 void prompt_student(Student *s);
 
+/* I/O arquivo (texto) */
+int load_students_from_file(StudentArray *arr, const char *filename); /* 0 OK */
+int save_students_to_file(const StudentArray *arr, const char *filename); /* 0 OK */
+
 #endif /* STUDENT_H */

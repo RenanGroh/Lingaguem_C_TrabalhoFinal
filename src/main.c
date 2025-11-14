@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "student.h"
+#include "students.h"
 
 static void wait_enter(void) {
     printf("\nPressione Enter para continuar...");

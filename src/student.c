@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "student.h"
+#include "students.h"
 
 static int ensure_capacity(StudentArray *arr, size_t min_capacity) {
     if (arr->capacity >= min_capacity) return 0;
