@@ -1,6 +1,6 @@
 /* student.h - definição da struct e protótipos */
-#ifndef STUDENT_H
-#define STUDENT_H
+#ifndef STUDENTS_H
+#define STUDENTS_H
 
 #include <stddef.h>
 
@@ -18,20 +18,20 @@ typedef struct {
     size_t capacity;
 } StudentArray;
 
-/* Inicializa/limpa o array */
+/* Gerenciamento */
 void init_student_array(StudentArray *arr);
 void free_student_array(StudentArray *arr);
 
-/* Operações básicas */
-int add_student(StudentArray *arr, const Student *s); // return 0 OK
+/* Operações */
+int add_student(StudentArray *arr, const Student *s);
 void list_students(const StudentArray *arr);
-int find_student_index_by_id(const StudentArray *arr, int id); // -1 se não
-int remove_student_by_id(StudentArray *arr, int id); // 1 se removido
+int find_student_index_by_id(const StudentArray *arr, int id);
+int remove_student_by_id(StudentArray *arr, int id);
 void print_student(const Student *s);
 void prompt_student(Student *s);
 
-/* I/O arquivo (texto) */
-int load_students_from_file(StudentArray *arr, const char *filename); /* 0 OK */
-int save_students_to_file(const StudentArray *arr, const char *filename); /* 0 OK */
+/* I/O */
+int load_students_from_file(StudentArray *arr, const char *filename);
+int save_students_to_file(const StudentArray *arr, const char *filename);
 
-#endif /* STUDENT_H */
+#endif /* STUDENTS_H */
