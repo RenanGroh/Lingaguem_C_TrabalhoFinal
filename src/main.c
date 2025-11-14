@@ -19,6 +19,11 @@ int main(void) {
     StudentArray arr;
     init_student_array(&arr);
 
+    const char *filename = "students.txt";
+    if (load_students_from_file(&arr, filename) == 0) {
+        /* ensure unique IDs in memory: keep as-is */
+    }
+
     int running = 1;
     //loop principal
     while (running) {
@@ -75,7 +80,8 @@ int main(void) {
                 break;
             }
             case 5:
-                // TODO: implementar save em arquivo
+                if (save_students_to_file(&arr, filename) == 0) printf("Salvo em %s\n", filename);
+                else printf("Erro ao salvar em %s\n", filename);
                 break;
             case 0:
                 running = 0;
@@ -86,4 +92,7 @@ int main(void) {
         if (running) wait_enter();
     }
 
+    if (save_students_to_file(&arr, filename) == 0) printf("\nSalvo %zu registros em %s\n", arr.size, filename);
+    free_student_array(&arr);
+    return 0;
 }
